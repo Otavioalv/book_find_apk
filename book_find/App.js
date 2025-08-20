@@ -9,13 +9,14 @@ export default function App() {
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
-      <StatusBar style="auto" />
-      
+      <StatusBar style="auto"/>
+
       <View
         style={styles.listBooks}
       >
         <ListBooks/>
       </View>
+      
     </KeyboardAvoidingView>
   );
 }
