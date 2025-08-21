@@ -1,7 +1,4 @@
-import { FlatList, Text, View } from "react-native"
-import { FontAwesome5 } from "@expo/vector-icons";
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { styles } from "./styles";
+import { FlatList, Text, View } from "react-native";
 import { BookCard } from "../BookCard";
 
 
@@ -29,7 +26,115 @@ export const ListBooks = () => {
             ]
         },
         {
-            "id": 3,
+            "id": 35476,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 343245,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 3123,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 233,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 543,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 3345,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 13,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 73,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 63,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 53,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 43,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 33,
+            "title": "Specification by Example",
+            "isbn": "1617290084",
+            "pageCount": 0,
+            "authors": [
+                "Gojko Adzic"   
+            ]
+        },
+        {
+            "id": 32,
             "title": "Specification by Example",
             "isbn": "1617290084",
             "pageCount": 0,
@@ -40,8 +145,10 @@ export const ListBooks = () => {
     ];
 
     return (
-        <View>
-            
-        </View>
+        <FlatList
+            data={listBks}
+            renderItem={BookCard}
+            keyExtractor={item => item.id}
+        />
     )
 }
