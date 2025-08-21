@@ -1,6 +1,6 @@
 import { Text, View } from "react-native"
-import { FontAwesome5 } from "@expo/vector-icons";
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { FontAwesome5, FontAwesome, Ionicons, MaterialIcons } from "@expo/vector-icons";
+// import Ionicons from '@expo/vector-icons/Ionicons';
 import { styles } from "./styles";
 // import { styles } from "./styles";
 
@@ -21,20 +21,67 @@ export const BookCard = ({item}) => {
             </View>
             
             <View style={styles.infoList}>
-                <Text>
+                <Text
+                    style={styles.titleFont}
+                >
                     {item.title}
                 </Text> 
 
-                <View style={styles.infoItem}>
-                    <FontAwesome5 name="user-edit" size={24} color="black" />
-                    <Text>{item.authors.join(", ")}</Text>           
+                <View style={styles.directionRow}>
+                    <FontAwesome5 
+                        style={[
+                            styles.textSecondary,
+                            styles.secondaryFont
+                        ]}
+                        name="user-edit"
+                    />
+                    <Text
+                        style={[
+                            styles.textSecondary,
+                            styles.secondaryFont
+                        ]}
+                    >
+                        {item.authors.join(", ")}
+                    </Text>           
                 </View>
                 
-                <View style={styles.infoItem}>
-                    <Ionicons name="document-text" size={24} color="black" />
-                    <Text>
-                        {item.pageCount ? item.pageCount : "N/A"} pages
-                    </Text>
+                <View style={styles.footerInfo}>
+                    <View style={styles.directionRow}>
+
+                        <Ionicons 
+                            style={[
+                                styles.textSecondary,
+                                styles.secondaryFont
+                            ]}
+                            name="document-text" 
+                        />
+                        <Text
+                            style={[
+                                styles.textSecondary,
+                                styles.secondaryFont
+                            ]}
+                        >
+                            {item.pageCount ? item.pageCount : "N/A"} pages
+                        </Text>
+                    </View>
+
+                    <View style={styles.directionRow}>
+                        <FontAwesome 
+                            name="bookmark-o" 
+                            style={[
+                                styles.textSecondary,
+                                styles.secondaryFont
+                            ]}
+                        />
+
+                        <MaterialIcons 
+                            name="arrow-forward-ios" 
+                            style={[
+                                styles.textSecondary,
+                                styles.secondaryFont
+                            ]}
+                        />
+                    </View>
                 </View>
             </View>
         </View>
