@@ -7,9 +7,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   scrollView: {
-      flexGrow: 1
+    flexGrow: 1
   },
   listBooks: {
-    marginTop: 30
+    flex: 1
   }
 });

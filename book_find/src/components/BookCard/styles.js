@@ -39,7 +39,6 @@ export const styles = StyleSheet.create({
         gap: 4,
         justifyContent: "space-between",
         alignItems: "center",          // centraliza ícones/texto na altura
-        paddingHorizontal: 8,          // dá respiro pros ícones não grudarem na borda
         paddingVertical: 4,
     }
 });

@@ -147,8 +147,8 @@ export const ListBooks = () => {
     return (
         <FlatList
             data={listBks}
-            renderItem={BookCard}
-            keyExtractor={item => item.id}
+            renderItem={({item}) => <BookCard item={item}/>}
+            keyExtractor={item => item.id.toString()}
         />
     )
 }
