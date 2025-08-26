@@ -2,22 +2,38 @@ import { Text, TouchableOpacity, View, Alert } from "react-native"
 import { Entypo, FontAwesome, FontAwesome5 } from "@expo/vector-icons"
 
 import { styles } from "./styles"
+import { useState } from "react"
 
 
 export const Footer = () => {
+    const [bttSelected, setBttSelected] = useState("home");
+
+    const handleSetBttSelected = (btt) => {
+        setBttSelected(btt);
+    }
+
+
     return (
         <View style={styles.container}>
             <TouchableOpacity
                 style={styles.button}
                 title="HOME"
-                onPress={() => Alert.alert("Botão vai para home")}
+                onPress={() => handleSetBttSelected("home")}
             > 
                 <Entypo 
                     name="home" 
-                    style={styles.buttonIcons}
+                    style={[
+                        bttSelected === "home" 
+                            ? styles.buttonIconSelected
+                            : styles.buttonIcon
+                    ]}
                 />
                 <Text
-                    style={styles.buttonText}
+                    style={[
+                        bttSelected === "home" 
+                            ? styles.buttonTextSelected 
+                            : styles.buttonText
+                        ]}
                 >
                     Home
                 </Text>
@@ -27,14 +43,22 @@ export const Footer = () => {
             <TouchableOpacity
                 style={styles.button}
                 title="SAVED"
-                onPress={() => Alert.alert("Botão vai para salvos")}
+                onPress={() => handleSetBttSelected("saved")}
             >
                 <FontAwesome 
-                    style={styles.buttonIcons}
+                    style={[
+                        bttSelected === "saved" 
+                            ? styles.buttonIconSelected
+                            : styles.buttonIcon
+                    ]}
                     name="bookmark" 
                 />
                 <Text
-                    style={styles.buttonText}
+                    style={[
+                        bttSelected === "saved" 
+                            ? styles.buttonTextSelected 
+                            : styles.buttonText
+                        ]}
                 >
                     Saved
                 </Text>
@@ -43,14 +67,22 @@ export const Footer = () => {
             <TouchableOpacity
                 style={styles.button}
                 title="PROFILE"
-                onPress={() => Alert.alert("Botão vai para profile")}
+                onPress={() => handleSetBttSelected("profile")}
             >
                 <FontAwesome5 
                     name="user-alt" 
-                    style={styles.buttonIcons}
+                    style={[
+                        bttSelected === "profile" 
+                            ? styles.buttonIconSelected
+                            : styles.buttonIcon
+                    ]}
                 />
                 <Text
-                    style={styles.buttonText}
+                    style={[
+                        bttSelected === "profile" 
+                            ? styles.buttonTextSelected 
+                            : styles.buttonText
+                        ]}
                 >
                     Profile
                 </Text>

@@ -4,6 +4,7 @@ import { ListBooks } from './src/components/ListBooks';
 import { styles } from './App.styles';
 import { Footer } from './src/components/Footer';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { Header } from './src/components/Header';
 
 export default function App() {
   // const insets = useSafeAreaInsets();
@@ -22,8 +23,8 @@ export default function App() {
             INPUT DE TEXTO VAI FICAR AQUI
            */}
           
+          <Header/>
           <ListBooks/>
-          
           <Footer/>
         {/* </KeyboardAvoidingView> */}
       </SafeAreaView>

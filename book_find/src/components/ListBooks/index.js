@@ -1,9 +1,13 @@
-import { FlatList, Text, View } from "react-native";
+import { FlatList } from "react-native";
 import { BookCard } from "../BookCard";
+import { listBooks } from "../../services/bookService";
+import { useEffect, useState } from "react";
 
 
 export const ListBooks = () => {
-    const listBks = [
+    const [listBks, setListBks] = useState([]);
+
+    /* const listBks = [
         {
             "id": 1,
             "title": "Unlocking Android",
@@ -142,7 +146,26 @@ export const ListBooks = () => {
                 "Gojko Adzic"   
             ]
         }
-    ];
+    ]; */
+
+    const fetchListBooks = async () => {
+        await listBooks();
+    }
+
+    useEffect(() => {
+        // É a forma correta criar uma função async DENTRO do useEffect
+        const loadBooks = async () => {
+            try {
+                const booksData = await listBooks(); // A função listBooks já retorna os dados ou um array vazio
+                setListBks(booksData); // Atualiza o estado com os dados recebidos
+            } catch (error) {
+                console.error("Erro final ao carregar os livros no componente:", error);
+                setListBks([]); // Garante que o estado seja um array em caso de erro
+            }
+        };
+
+        loadBooks(); // Chama a função para buscar os dados
+    }, []); 
 
     return (
         <FlatList
