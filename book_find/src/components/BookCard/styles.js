@@ -5,21 +5,23 @@ export const styles = StyleSheet.create({
     section: {
         flexDirection: "row",
         marginVertical: 10,
-        gap: 8
+        gap: 8,
     },
     infoList: {
-        gap: 8
+        gap: 8,
+        flex: 1
     },  
     directionRow: {
         flexDirection: "row",
-        gap: 4
+        gap: 4,
     },
     titleFont: {
         fontSize: 22,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        flex: 1
     },
     secondaryFont: {
-        fontSize: 17
+        fontSize: 17,
     }, 
     textSecondary: {
         color: "#4c4c4c",
@@ -33,7 +35,6 @@ export const styles = StyleSheet.create({
         borderRadius: 8
     },
     footerInfo: {
-        // backgroundColor: "#f2f2",
         width: "90%",
         flexDirection: "row",
         gap: 4,

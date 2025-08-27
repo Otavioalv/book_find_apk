@@ -5,8 +5,10 @@ import { styles } from './App.styles';
 import { Footer } from './src/components/Footer';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Header } from './src/components/Header';
+import { useState } from 'react';
 
 export default function App() {
+  const [searchBook, setSerchBook] = useState("");
   // const insets = useSafeAreaInsets();
 
   return (
@@ -23,8 +25,8 @@ export default function App() {
             INPUT DE TEXTO VAI FICAR AQUI
            */}
           
-          <Header/>
-          <ListBooks/>
+          <Header setSearch={setSerchBook} search={searchBook}/>
+          <ListBooks filterBook={searchBook}/>
           <Footer/>
         {/* </KeyboardAvoidingView> */}
       </SafeAreaView>

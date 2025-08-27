@@ -3,7 +3,7 @@ import { Text, TextInput, View } from "react-native"
 import { styles } from './styles';
 
 
-export const Header = () => {
+export const Header = ({search, setSearch}) => {
 
     return (
         <View style={styles.container}>
@@ -23,7 +23,10 @@ export const Header = () => {
 
                 <TextInput
                     style={styles.inputText}
-                    placeholder="Search Books"
+                    placeholder="Search Books or authors..."
+                    value={search}
+                    onChangeText={setSearch}
+                    
                 />
 
                 <FontAwesome5

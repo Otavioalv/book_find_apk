@@ -6,8 +6,6 @@ import { styles } from "./styles";
 
 
 export const BookCard = ({item}) => {
-    // console.log(item);
-
     return (
         <View style={styles.section}>
             <View
@@ -20,14 +18,18 @@ export const BookCard = ({item}) => {
                 />
             </View>
             
-            <View style={styles.infoList}>
+            <View style={[styles.infoList]}>
                 <Text
-                    style={styles.titleFont}
+                    style={[styles.titleFont]}
+                    
+                    numberOfLines={1}
+                    ellipsizeMode="tail"
                 >
                     {item.title}
+                    
                 </Text> 
 
-                <View style={styles.directionRow}>
+                <View style={[styles.directionRow]}>
                     <FontAwesome5 
                         style={[
                             styles.textSecondary,
@@ -38,8 +40,10 @@ export const BookCard = ({item}) => {
                     <Text
                         style={[
                             styles.textSecondary,
-                            styles.secondaryFont
+                            styles.secondaryFont, {flex: 1}
                         ]}
+                        numberOfLines={1}
+                        ellipsizeMode="tail"
                     >
                         {item.authors.join(", ")}
                     </Text>           

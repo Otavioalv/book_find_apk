@@ -7,6 +7,7 @@ export const listBooks = async () => {
 
         const listBooks = res.data;
 
+        // console.log(listBooks);
         return listBooks
     } catch (err) {
         console.log("Erro ao resgatar lista de livros: ", err);
